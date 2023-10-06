@@ -22,7 +22,7 @@ function showDataSaved() {
     const savedInputData = localStorage.getItem(FEEDBACK);
     console.log(savedInputData);
     if (savedInputData) {
-        inputsDataSaved = JSON.parse(savedInputData);
+        const inputsDataSaved = JSON.parse(savedInputData);
         inputBox.value = inputsDataSaved.email;
         message.value = inputsDataSaved.message;
     };
