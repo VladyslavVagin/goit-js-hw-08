@@ -9,6 +9,14 @@ player.on('timeupdate', throttle(function (data) {
 }, 1000));
 
 const timingOfVideo = localStorage.getItem("videoplayer-current-time");
-const parsedTimingSeconds = JSON.parse(timingOfVideo).seconds;
 
-player.setCurrentTime(parsedTimingSeconds);
+const timingSeconds = function (timer) {
+    if (timingOfVideo !== null) {
+        return timer = JSON.parse(timingOfVideo).seconds;
+    } else {
+        return timer = '0';
+    }
+};
+
+player.setCurrentTime(timingSeconds());
+
