@@ -31,13 +31,12 @@ function showDataSaved() {
 // SUMBIT FORM + RESET INPUTS + REMOVE FROM LOCAL STORAGE INPUT DATA
 feedbackForm.addEventListener("submit", e => {
     e.preventDefault();
-    if (inputBox.value && msg.value) {
+    if (inputBox.value === '' || msg.value === '') {
+        alert("ATTENTION !!! PLEASE, ALL FIELDS SHOULD BE FILLED !!!!");
+    } else {
         e.currentTarget.reset();
         localStorage.removeItem(FEEDBACK);
         console.log(formData);
-    } else {
-        alert("ATTENTION !!! PLEASE, ALL FIELDS SHOULD BE FILLED !!!!")
     }
-
 });
 
